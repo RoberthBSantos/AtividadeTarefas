@@ -1,0 +1,30 @@
+
+<h2><div><span>tarefa:</span>{{tarefa1.name}}</div></h2>
+
+
+
+<h2>Lista de Tarefas</h2>
+<ul class="tarefas">
+  <li *ngFor ="let tarefa of tarefas" 
+    [class.selected]="tarefa === selectedTarefa"
+    (click)="onSelect(tarefa)">
+    <span class="badge">
+
+    </span> {{tarefa.name}}
+  </li>
+</ul>
+<div *ngIf="selectedTarefa">
+  <h3> DETALHE <br> Nome: {{selectedTarefa.name | uppercase}} Id: {{selectedTarefa.id}}</h3>
+  
+</div>
+
+<h2>Usando o serviço</h2>
+<ul class="tarefas">
+  <li *ngFor ="let tarefa of sTarefas" 
+    [class.selected]="tarefa === selectedTarefa"
+    (click)="onSelect(sTarefa)">
+    <span class="badge">
+
+    </span> {{tarefa.name}}
+  </li>
+</ul>
